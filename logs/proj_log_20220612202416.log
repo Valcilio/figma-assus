@@ -1,0 +1,38 @@
+2022-06-12 20:24:21,371 (INFO)	||| Initing extract of ETL to obtain RBY historical data in USD value!
+2022-06-12 20:24:22,072 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (1000 != 2)!
+2022-06-12 20:24:22,073 (ERROR)	||| Extracting diferent quantity of columns from Alpha Vantage API than expected (11 != 1)!
+2022-06-12 20:24:22,074 (ERROR)	||| Generic error in ETL's test, check the code!
+2022-06-12 20:25:04,174 (INFO)	||| Initing extract of ETL to obtain RBY historical data in USD value!
+2022-06-12 20:25:04,897 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (1000 != 2)!
+2022-06-12 20:25:04,898 (ERROR)	||| Extracting diferent quantity of columns from Alpha Vantage API than expected (11 != 1)!
+2022-06-12 20:25:04,899 (ERROR)	||| Generic error in ETL's test, check the code!
+2022-06-12 20:25:59,367 (INFO)	||| Initing extract of ETL to obtain RBY historical data in USD value!
+2022-06-12 20:26:53,353 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-12 20:26:54,156 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:26:54,160 (INFO)	||| ETL finished!
+2022-06-12 20:26:54,161 (INFO)	||| test finished!
+2022-06-12 20:26:54,162 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-12 20:26:54,929 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:26:54,932 (INFO)	||| ETL finished!
+2022-06-12 20:26:54,933 (INFO)	||| test finished!
+2022-06-12 20:26:54,933 (INFO)	||| Initing extract of ETL to obtain BTC historical data in CNY value!
+2022-06-12 20:26:55,522 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:26:55,524 (INFO)	||| ETL finished!
+2022-06-12 20:26:55,525 (INFO)	||| test finished!
+2022-06-12 20:26:55,527 (INFO)	||| Initing extract of ETL to obtain BTC historical data in EUR value!
+2022-06-12 20:26:56,923 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:26:56,931 (INFO)	||| ETL finished!
+2022-06-12 20:26:56,935 (INFO)	||| test finished!
+2022-06-12 20:26:56,938 (INFO)	||| Initing extract of ETL to obtain BTC historical data in GBP value!
+2022-06-12 20:26:57,877 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:26:57,880 (INFO)	||| ETL finished!
+2022-06-12 20:26:57,881 (INFO)	||| test finished!
+2022-06-12 20:28:18,772 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-12 20:28:20,024 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:28:20,027 (INFO)	||| ETL finished!
+2022-06-12 20:28:37,239 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-12 20:28:38,317 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:28:38,325 (INFO)	||| ETL finished!
+2022-06-12 20:28:55,031 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-12 20:28:55,913 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:28:55,920 (INFO)	||| ETL finished!

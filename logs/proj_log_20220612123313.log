@@ -1,0 +1,28 @@
+2022-06-12 12:33:16,103 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-12 12:33:17,255 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 12:33:17,257 (INFO)	||| ETL finished!
+2022-06-12 12:33:17,258 (INFO)	||| test finished!
+2022-06-12 12:33:17,258 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-12 12:33:18,465 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-12 12:33:18,472 (INFO)	||| ETL finished!
+2022-06-12 12:33:18,475 (INFO)	||| test finished!
+2022-06-12 12:33:18,478 (INFO)	||| Initing extract of ETL to obtain AAVE historical data in USD value!
+2022-06-12 12:33:19,578 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (1000 != 606)!
+2022-06-12 12:33:19,581 (INFO)	||| Initing data transform of AAVE historical data!
+2022-06-12 12:33:19,589 (INFO)	||| ETL finished!
+2022-06-12 12:33:19,592 (INFO)	||| test finished!
+2022-06-12 12:33:19,597 (INFO)	||| Initing extract of ETL to obtain BCH historical data in USD value!
+2022-06-12 12:33:20,578 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (1000 != 928)!
+2022-06-12 12:33:20,578 (INFO)	||| Initing data transform of BCH historical data!
+2022-06-12 12:33:20,581 (INFO)	||| ETL finished!
+2022-06-12 12:33:20,581 (INFO)	||| test finished!
+2022-06-12 12:33:20,582 (INFO)	||| Initing extract of ETL to obtain BUSD historical data in USD value!
+2022-06-12 12:33:21,133 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (1000 != 997)!
+2022-06-12 12:33:21,135 (INFO)	||| Initing data transform of BUSD historical data!
+2022-06-12 12:33:21,138 (INFO)	||| ETL finished!
+2022-06-12 12:33:21,139 (INFO)	||| test finished!
+2022-06-12 12:33:21,140 (INFO)	||| Initing extract of ETL to obtain ADA historical data in USD value!
+2022-06-12 12:33:21,357 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (1000 != 2)!
+2022-06-12 12:33:21,359 (ERROR)	||| Extracting diferent quantity of columns from Alpha Vantage API than expected (11 != 1)!
+2022-06-12 12:33:21,364 (ERROR)	||| Generic error in ETL's test, check the code!
+2022-06-12 12:33:40,366 (INFO)	||| Initing extract of ETL to obtain ADA historical data in BRL value!

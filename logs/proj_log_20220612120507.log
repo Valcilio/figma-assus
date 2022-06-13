@@ -1,0 +1,30 @@
+2022-06-12 12:05:09,478 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-12 12:05:10,668 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 12:05:10,671 (INFO)	||| ETL finished!
+2022-06-12 12:05:10,672 (INFO)	||| test finished!
+2022-06-12 12:05:10,674 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-12 12:05:11,447 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-12 12:05:11,449 (INFO)	||| ETL finished!
+2022-06-12 12:05:11,449 (INFO)	||| test finished!
+2022-06-12 12:05:11,450 (INFO)	||| Initing extract of ETL to obtain AAVE historical data in USD value!
+2022-06-12 12:05:12,187 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (rows = 606)!
+2022-06-12 12:05:12,190 (INFO)	||| Initing data transform of AAVE historical data!
+2022-06-12 12:05:12,197 (INFO)	||| ETL finished!
+2022-06-12 12:05:12,202 (INFO)	||| test finished!
+2022-06-12 12:05:12,203 (INFO)	||| Initing extract of ETL to obtain BCH historical data in USD value!
+2022-06-12 12:05:12,743 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (rows = 928)!
+2022-06-12 12:05:12,744 (INFO)	||| Initing data transform of BCH historical data!
+2022-06-12 12:05:12,747 (INFO)	||| ETL finished!
+2022-06-12 12:05:12,748 (INFO)	||| test finished!
+2022-06-12 12:05:12,749 (INFO)	||| Initing extract of ETL to obtain BUSD historical data in USD value!
+2022-06-12 12:05:13,315 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (rows = 997)!
+2022-06-12 12:05:13,317 (INFO)	||| Initing data transform of BUSD historical data!
+2022-06-12 12:05:13,321 (INFO)	||| ETL finished!
+2022-06-12 12:05:13,322 (INFO)	||| test finished!
+2022-06-12 12:05:13,324 (INFO)	||| Initing extract of ETL to obtain RBY historical data in USD value!
+2022-06-12 12:05:13,548 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (rows = 2)!
+2022-06-12 12:05:13,550 (ERROR)	||| Extracting more columns from Alpha Vantage API than expected (cols = 1)!
+2022-06-12 12:05:13,551 (INFO)	||| Generic error in ETL's test, check the code!
+2022-06-12 12:08:20,784 (INFO)	||| Initing extract of ETL to obtain RBY historical data in USD value!
+2022-06-12 12:08:21,519 (WARNING)	||| Extracting less rows from Alpha Vantage API than waited (rows = 2)!
+2022-06-12 12:08:21,521 (ERROR)	||| Extracting more columns from Alpha Vantage API than expected (cols = 1)!

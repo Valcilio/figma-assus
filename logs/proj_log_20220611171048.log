@@ -1,0 +1,6 @@
+2022-06-11 17:11:10,532 (INFO)	||| Initing extract of Alpha Vantage!
+2022-06-11 17:11:11,762 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-11 17:11:11,767 (INFO)	||| ETL to obtain BTC historical data finished!
+2022-06-11 17:12:18,169 (INFO)	||| Initing extract of Alpha Vantage!
+2022-06-11 17:12:19,748 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-11 17:12:19,750 (INFO)	||| ETL to obtain BTC historical data finished!

@@ -1,0 +1,20 @@
+2022-06-12 20:23:01,577 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-12 20:23:03,346 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-12 20:23:03,350 (INFO)	||| ETL finished!
+2022-06-12 20:23:03,351 (INFO)	||| test finished!
+2022-06-12 20:23:03,351 (INFO)	||| Initing extract of ETL to obtain ETH historical data in BRL value!
+2022-06-12 20:23:04,658 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-12 20:23:04,660 (INFO)	||| ETL finished!
+2022-06-12 20:23:04,662 (INFO)	||| test finished!
+2022-06-12 20:23:04,662 (INFO)	||| Initing extract of ETL to obtain ADA historical data in BRL value!
+2022-06-12 20:23:05,877 (INFO)	||| Initing data transform of ADA historical data!
+2022-06-12 20:23:05,884 (INFO)	||| ETL finished!
+2022-06-12 20:23:05,887 (INFO)	||| test finished!
+2022-06-12 20:23:05,890 (INFO)	||| Initing extract of ETL to obtain DOGE historical data in BRL value!
+2022-06-12 20:23:06,875 (INFO)	||| Initing data transform of DOGE historical data!
+2022-06-12 20:23:06,882 (INFO)	||| ETL finished!
+2022-06-12 20:23:06,886 (INFO)	||| test finished!
+2022-06-12 20:23:06,888 (INFO)	||| Initing extract of ETL to obtain XRP historical data in BRL value!
+2022-06-12 20:23:07,838 (INFO)	||| Initing data transform of XRP historical data!
+2022-06-12 20:23:07,841 (INFO)	||| ETL finished!
+2022-06-12 20:23:07,843 (INFO)	||| test finished!

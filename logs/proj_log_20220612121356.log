@@ -1,0 +1,2 @@
+2022-06-12 12:13:57,577 (INFO)	||| Initing extract of ETL to obtain RBY historical data in USD value!
+2022-06-12 12:13:58,326 (WARNING)	||| Extracting more rows from Alpha Vantage API than waited (rows = 2)!
