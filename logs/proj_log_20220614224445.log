@@ -1,0 +1,4 @@
+2022-06-14 22:44:45,584 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:44:47,208 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:44:47,225 (INFO)	||| ETL finished!
+2022-06-14 22:44:48,641 (INFO)	||| The 'x' column needs to be one in the following list ['Year', 'Month', 'Day of Month', 'Day of Week']!

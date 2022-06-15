@@ -1,7 +1,5 @@
 import datetime as dt
-from distutils.log import INFO, info
 import logging
-from warnings import WarningMessage
 from pandas.core.frame import DataFrame
 
 class LoggerMsg():

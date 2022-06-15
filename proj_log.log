@@ -364,3 +364,41 @@
 2022-06-13 20:41:54,085 (INFO)	||| ETL finished!
 2022-06-13 20:41:58,444 (INFO)	||| Is necessary one date info in index or 
                                          column to plot stability!
+2022-06-14 08:20:19,531 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 08:20:21,399 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 08:20:21,408 (INFO)	||| ETL finished!
+2022-06-14 08:22:47,006 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 08:22:48,555 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 08:22:48,560 (INFO)	||| ETL finished!
+2022-06-14 20:54:29,155 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 20:54:31,114 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 20:54:31,127 (INFO)	||| ETL finished!
+2022-06-14 22:15:46,355 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:15:47,550 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:15:47,554 (INFO)	||| ETL finished!
+2022-06-14 22:17:17,328 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:17:18,258 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:17:18,274 (INFO)	||| ETL finished!
+2022-06-14 22:20:40,915 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:20:42,259 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:20:42,263 (INFO)	||| ETL finished!
+2022-06-14 22:22:44,696 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:22:46,193 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:22:46,207 (INFO)	||| ETL finished!
+2022-06-14 22:35:13,606 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:35:17,496 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:35:17,499 (INFO)	||| ETL finished!
+2022-06-14 22:36:10,255 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:36:11,893 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:36:11,911 (INFO)	||| ETL finished!
+2022-06-14 22:43:42,882 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:43:43,765 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:43:43,784 (INFO)	||| ETL finished!
+2022-06-14 22:43:54,195 (INFO)	||| The 'x' column needs to be one of ['Year', 'Month', 'Day of Month', 'Day of Week']!
+2022-06-14 22:44:45,584 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:44:47,208 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:44:47,225 (INFO)	||| ETL finished!
+2022-06-14 22:44:48,641 (INFO)	||| The 'x' column needs to be one in the following list ['Year', 'Month', 'Day of Month', 'Day of Week']!
+2022-06-14 22:45:04,589 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-14 22:45:05,978 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-14 22:45:05,994 (INFO)	||| ETL finished!
