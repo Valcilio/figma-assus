@@ -19,7 +19,7 @@ class LoggerMsg():
 
         self.logger = logging.getLogger(file_name)
 
-    def full_msg(self, msg: str, **kwargs):
+    def full_warning(self, msg: str, **kwargs):
 
         self.logger.info(msg)
 
