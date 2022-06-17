@@ -224,3 +224,12 @@ class  DataAnalysis():
         df.hist(figsize=all_figsize, **kwargs);
 
         return None
+
+    def nature_transform_effect_check(self, y: str, all_figsize=(18, 7), **kwargs):
+
+        df = self.derivate_int_float_columns()
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=all_figsize);
+
+        df[y].hist(ax=ax1)
+        np.log(df[y]).hist(ax=ax2)

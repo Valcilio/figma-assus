@@ -1,0 +1,18 @@
+Commit 2022-06-16 17:37H
+
+Corrected:
+    - No buggies corrected today.
+
+Additioned:
+    - src/datanalysis.py: two new methods to plot all time boxplots 
+    together and all time stabilities together.
+
+    - notebooks/data_eng_ml_model.ipynb: new data analysis with boxplots
+    outlier detector and times stability to understand the data.
+
+Revised:
+    - src/datanalysis.py: some methods to plot boxplots and time 
+    stabilities was revised to a most clean code state.
+
+    - notebooks/data_eng_ml_model.ipynb: some markdowns was excluded
+    because it's not necessary anymore.
