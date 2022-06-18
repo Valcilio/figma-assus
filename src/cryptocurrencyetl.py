@@ -2,7 +2,7 @@ import datetime as dt
 from pickle import FALSE
 import pandas as pd
 
-from logger.logger_msg import LoggerMsg
+from resources.logger.logger_msg import LoggerMsg
 
 class CryptocurrencyEtl():
 

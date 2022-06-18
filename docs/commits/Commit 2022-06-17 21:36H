@@ -1,0 +1,16 @@
+data analysis finished
+
+Warning:
+    - No warning needed this time!
+
+Additioned:
+
+    - src/datanalysis.py: completed method to plot the impactos of nature transformation.
+
+    - notebooks/data_eng_ml_model.ipynb: all plots needed to data analysis finalized, just need some revision
+    for start next step.
+
+Revised:
+    - src/datanalysis.py: methods to plots all boxplots and all time stability refactored
+    some functions was passed for the methods to plot internal and refactored there for less code.
+    Besides that was corrected some bugs created in the old commit.

@@ -418,3 +418,6 @@
                                           column to do time procedures!
 2022-06-16 12:29:05,989 (INFO)	||| Is necessary one date info in index or 
                                           column to do time procedures!
+2022-06-17 21:18:18,285 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-17 21:18:20,569 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-17 21:18:20,581 (INFO)	||| ETL finished!
