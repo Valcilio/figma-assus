@@ -1,0 +1,3 @@
+2022-06-18 14:31:51,988 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-18 14:31:53,272 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-18 14:31:53,283 (INFO)	||| ETL finished!

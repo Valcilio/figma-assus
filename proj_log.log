@@ -421,3 +421,15 @@
 2022-06-17 21:18:18,285 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
 2022-06-17 21:18:20,569 (INFO)	||| Initing data transform of ETH historical data!
 2022-06-17 21:18:20,581 (INFO)	||| ETL finished!
+2022-06-18 14:11:58,394 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-18 14:11:59,480 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-18 14:11:59,490 (INFO)	||| ETL finished!
+2022-06-18 14:31:51,988 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-18 14:31:53,272 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-18 14:31:53,283 (INFO)	||| ETL finished!
+2022-06-18 14:36:22,713 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-18 14:36:23,662 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-18 14:36:23,684 (INFO)	||| ETL finished!
+2022-06-18 14:39:32,304 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-18 14:39:34,518 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-18 14:39:34,535 (INFO)	||| ETL finished!

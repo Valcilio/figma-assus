@@ -1,0 +1,18 @@
+improvement on data analysis code and new class with data analysis data transformations.
+
+Warning:
+    - No warning needed this time!
+
+Additioned:
+
+    - reports/figures: created this directory to save figures form data analysis.
+
+    - src/resources/context.py: new file path to images in reports "FIG_FLD".
+
+    - src/resources/datanalysis.py: new method to save plots in reports/figures.
+
+    - src/resources/datatransform.py: created to contain the data transformation for analysis.
+
+Revised:
+    - src/resources/datanalysis.py: moved methods of data transformation to a new python file to 
+    improve the read of this code, was made a inheritance for use this methods from this other file.

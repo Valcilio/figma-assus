@@ -1,30 +1,32 @@
+from importlib.resources import path
+import dataframe_image as dfi
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 import pandas as pd
 import seaborn as sns
+import shutil
 from   sklearn.preprocessing import PowerTransformer
 import sys
 sys.path.insert(0, os.environ.get('SRC_FIGMA_PATH'))
 
+from resources.datatransform import DataTransform
 from resources.logger.logger_msg import LoggerMsg
 
-class  DataAnalysis():
+class  DataAnalysis(DataTransform):
 
     def __init__(self, df: pd.DataFrame, date_col = 'nan', 
                 individual_figsize = (18,8),
                 titlesize=20, axes_size = 18, ticks_size = 13,
                 start_date = '2020-01-01', end_date='2022-12-31', **kwargs):
+        
+        super().__init__(df, date_col, start_date, end_date)
 
-        self.df = df
-        self.date_col = date_col
         self.individual_figsize = individual_figsize
         self.titlesize = titlesize
         self.axes_size = axes_size
         self.ticks_size = ticks_size
-        self.start_date = start_date
-        self.end_date = end_date
         self.logger = LoggerMsg(file_name='Data Analysis')
 
     def label_size_settings(self, **kwargs):
@@ -48,65 +50,17 @@ class  DataAnalysis():
 
         return None
 
-    def check_transform_dateindex(self, **kwargs):
-        
-        df = self.df.copy()
-        df1 = self.df.copy()
+    def save_fig(self, saving_figloc: path, df: pd.DataFrame = False, dataframe: bool = False, **kwargs):
 
-        df1['partner'] = 1
-        df1 = df1['partner'].reset_index(drop=False).select_dtypes('datetime64[ns]')
-        date_index_check = df1.shape[1]
+        if dataframe:
+            fig_name = os.path.basename(saving_figloc)
+            dfi.export(df, fig_name);
+            shutil.move(fig_name, saving_figloc);
 
-        if (self.date_col == 'nan') & (date_index_check != 1):
-            self.logger.full_error(msg='''Is necessary one date info in index or 
-                                          column to do time procedures!''')
+        else:
+            plt.savefig(saving_figloc)
 
-        elif (self.date_col != 'nan') & (date_index_check == 0):
-            df[self.date_col] = pd.to_datetime(df[self.date_col])
-            df = df.set_index(self.date_col)
-        
-        elif (date_index_check == 1):
-            None
-
-        return df
-
-    def derivate_time_info(self, **kwargs):
-        
-        df = self.check_transform_dateindex()
-
-        df['Year'] = df.index.year
-        df['Month'] = df.index.month
-        df['Week of Year'] = df.index.isocalendar().week
-        df['Day of Month'] = df.index.day
-        df['Day of Week']  = df.index.day_of_week
-        df['Daily'] = df.index
-
-        cols = [['Week of Year', 'Weekly'], ['Month', 'Monthly']]
-        
-        for c in cols: 
-            df[c[0]] = df[c[0]].astype(int).apply(lambda x: '0' + str(x) if x < 10 else str(x))
-            df['Year'] = df['Year'].astype(str)
-            df[c[1]] = df['Year'] + df[c[0]]
-
-        df['Year']  = df['Year'].astype(int)
-        df['Month'] = df['Month'].astype(int)
-        df['Week of Year']  = df['Week of Year'].astype(int)
-
-        df['Weekend'] = df['Day of Week'].apply(lambda x: 
-                                                1 if x in [5, 6] else 0)
-
-        df = df[df.index.to_series().between(self.start_date, self.end_date)].reset_index()
-
-        return df
-
-    def derivate_int_float_columns(self, **kwargs):
-
-        df = self.df.copy()
-        num_attributes = df.select_dtypes(include=['int64', 'float64'])
-
-        return num_attributes
-
-    def statistical_description(self, **kwargs):
+    def statistical_description(self, saving_figloc: str = False, **kwargs):
 
         df = self.derivate_int_float_columns()
 
@@ -124,9 +78,12 @@ class  DataAnalysis():
         m.columns = ['attributes', 'mean', 'median', 'std', 
                      'min', 'max', 'range', 'skew', 'kurtosis']
 
+        if saving_figloc:
+            self.save_fig(df = m, saving_figloc=saving_figloc, dataframe=True)
+
         return m
 
-    def timely_stability(self, x: str, **kwargs):
+    def timely_stability(self, x: str, saving_figloc: path = False, **kwargs):
 
         df = self.derivate_time_info()
 
@@ -134,9 +91,13 @@ class  DataAnalysis():
         df = df.groupby(x).median()
         df.plot(figsize=self.individual_figsize, title=f"{x}'s Stability", **kwargs)
 
+        if saving_figloc:
+            self.save_fig(saving_figloc=saving_figloc)
+
         return None
 
-    def internal_timely_stability(self, x: str, y: str, ax_stab: matplotlib.axes.Axes = False, **kwargs):
+    def internal_timely_stability(self, x: str, y: str, ax_stab: matplotlib.axes.Axes = False, 
+                                  **kwargs):
 
         df = self.derivate_time_info()
         df[x] = df[x].astype(str)
@@ -147,7 +108,7 @@ class  DataAnalysis():
 
         return None
 
-    def all_timely_stability(self, y, all_figsize=(22,15), **kwargs):
+    def all_timely_stability(self, y, all_figsize: tuple = (22,15), saving_figloc: path = False, **kwargs):
 
         fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=all_figsize);
 
@@ -156,9 +117,12 @@ class  DataAnalysis():
         self.internal_timely_stability(x='Monthly', y=y, ax_stab=ax3, **kwargs);
         self.internal_timely_stability(x='Year', y=y, ax_stab=ax4, **kwargs);
 
+        if saving_figloc:
+            self.save_fig(saving_figloc=saving_figloc)
+
         return None
 
-    def outlier_detector_boxplot(self, x: str, ax_box: matplotlib.axes.Axes = False, **kwargs):
+    def outlier_detector_boxplot(self, x: str, saving_figloc: path = False, **kwargs):
   
         df = self.derivate_time_info()
  
@@ -166,6 +130,9 @@ class  DataAnalysis():
         plt.title(f"{x}'s Boxplot to Outlier Detection", fontsize=self.titlesize)
 
         sns.boxplot(data=df, x=x, **kwargs)
+
+        if saving_figloc:
+            self.save_fig(saving_figloc=saving_figloc)
 
         return None
 
@@ -183,7 +150,7 @@ class  DataAnalysis():
 
         return None
 
-    def all_temporal_outlier_detector_boxplots(self, y:str, all_figsize=(22, 20), **kwargs):
+    def all_temporal_outlier_detector_boxplots(self, y: str, all_figsize: tuple =(22, 20), saving_figloc: path = False, **kwargs):
 
         fig, ((ax1, ax2), (ax3, ax4), (ax5, ax6)) = plt.subplots(3, 2, figsize=all_figsize);
 
@@ -194,16 +161,22 @@ class  DataAnalysis():
         self.internal_outlier_detector_boxplot(x='Day of Month', ax_box=ax5, y=y);
         self.internal_outlier_detector_boxplot(x='Day of Week',  ax_box=ax6, y=y);
 
+        if saving_figloc:
+            self.save_fig(saving_figloc=saving_figloc)
+
         return None
 
-    def distribution_check(self, all_figsize=(22,15), **kwargs):
+    def distribution_check(self, all_figsize: tuple =(22,15), saving_figloc: path = False, **kwargs):
 
         df = self.derivate_int_float_columns()
         df.hist(figsize=all_figsize, **kwargs);
 
+        if saving_figloc:
+            self.save_fig(saving_figloc=saving_figloc)
+
         return None
 
-    def nature_transform_effect_check(self, y: str, all_figsize=(14, 9), **kwargs):
+    def nature_transform_effect_check(self, y: str, all_figsize: tuple =(14, 9), saving_figloc: path = False, **kwargs):
 
         df = self.derivate_int_float_columns()
         fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=all_figsize);
@@ -227,5 +200,8 @@ class  DataAnalysis():
         yeojohnson_scaler = yeojohnson_scaler.fit(df[[y]])
         df[f'{y}_yeo-johnson'] = yeojohnson_scaler.transform(df[[y]])
         df[f'{y}_yeo-johnson'].hist(ax=ax4)
+
+        if saving_figloc:
+            self.save_fig(saving_figloc=saving_figloc)
 
         return None

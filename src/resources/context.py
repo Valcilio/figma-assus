@@ -64,6 +64,8 @@ REPORT_FLD = PROJ_DIR / 'reports'
 SRC_FLD = PROJ_DIR / 'src'
 RESOURCES_FLD = SRC_FLD / 'resources'
 
+FIG_FLD = REPORT_FLD / 'figures'
+
 # Add reference to HOME_FLD
 if 'USERPROFILE' in os.environ:
     HOME_FLD = Path(os.environ['USERPROFILE'])
