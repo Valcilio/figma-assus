@@ -1,0 +1,4 @@
+2022-06-19 12:04:21,623 (WARNING)	||| The mean difference is below 0.001! (difference = 1.9759681890718638e-11)
+2022-06-19 12:04:30,627 (WARNING)	||| The mean difference is below 0.001! (difference = 7.185008144006133e-14)
+2022-06-19 12:04:46,670 (ERROR)	||| Method need to be in ['box-cox', 'yeo-johnson', 'log1p']
+2022-06-19 12:18:11,094 (WARNING)	||| The mean difference is below 0.001! (difference = 7.185008144006133e-14)

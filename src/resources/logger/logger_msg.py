@@ -1,15 +1,14 @@
 import datetime as dt
 import logging
+from multiprocessing.sharedctypes import Value
 from pandas.core.frame import DataFrame
 
 class LoggerMsg():
 
     def __init__(self, file_name: str, **kwargs):
         
-        # dia atual
-        self.today = dt.datetime.now().strftime('%Y%m%d%H%M%S')
+        self.today = dt.datetime.now().strftime('%Y%m%d%H%')
 
-        # configurando o log
         logging.basicConfig(
             filename=f'../logs/log_{self.today}.txt',
             format='%(asctime)s - %(levelname)s - %(name)s - %(message)s',
@@ -21,13 +20,13 @@ class LoggerMsg():
 
     def full_warning(self, msg: str, **kwargs):
 
-        self.logger.info(msg)
+        self.logger.warning(msg)
 
         return Warning(msg)
 
     def full_error(self, msg: str, **kwargs):
 
-        self.logger.info(msg)
+        self.logger.error(msg)
 
         raise ValueError(msg)
 
@@ -74,3 +73,10 @@ class LoggerMsg():
         self.logger.info(msg)
 
         return msg
+
+    def needed_error(self, var: str, options: str, **kwargs):
+
+        msg = f'''{var} need to be in {options}!'''
+        self.logger.error(msg)
+
+        raise ValueError(msg)

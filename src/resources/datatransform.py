@@ -1,5 +1,9 @@
+import datetime as dt
+from statistics import mean
+import numpy as np
 import os
 import pandas as pd
+from   sklearn import preprocessing as pp
 import sys
 sys.path.insert(0, os.environ.get('SRC_FIGMA_PATH'))
 
@@ -7,34 +11,49 @@ from resources.logger.logger_msg import LoggerMsg
 
 class DataTransform():
 
-    def __init__(self, df: pd.DataFrame, date_col = 'nan', 
-                start_date = '2020-01-01', end_date='2022-12-31', **kwargs):
+    def __init__(self, df: pd.DataFrame, date_col: str = 'nan', 
+                start_date: str = '2020-01-01', 
+                end_date: str = dt.datetime.now().strftime("%Y-%m-%d"), **kwargs):
 
-        self.df = df
-        self.date_col = date_col
         self.start_date = start_date
         self.end_date = end_date
+        self.df = df.copy()
+        self.date_col = date_col
         self.logger = LoggerMsg(file_name='Data Transform')
 
-    def check_transform_dateindex(self, **kwargs):
-        
+    def check_dateindex(self, **kwargs):
+
         df = self.df.copy()
-        df1 = self.df.copy()
 
-        df1['partner'] = 1
-        df1 = df1['partner'].reset_index(drop=False).select_dtypes('datetime64[ns]')
-        date_index_check = df1.shape[1]
+        df['partner'] = 1
+        df = df['partner'].reset_index(drop=False).select_dtypes('datetime64[ns]')
+        date_index_check = df.shape[1]
 
-        if (self.date_col == 'nan') & (date_index_check != 1):
+        return date_index_check
+
+    def transform_dateindex(self, date_index_check: int, **kwargs):
+
+        df = self.df.copy()
+
+        if (self.date_col == 'nan') & (date_index_check == 0):
             self.logger.full_error(msg='''Is necessary one date info in index or 
                                           column to do time procedures!''')
 
         elif (self.date_col != 'nan') & (date_index_check == 0):
             df[self.date_col] = pd.to_datetime(df[self.date_col])
-            df = df.set_index(self.date_col)
+            df = df.set_index(self.date_col)    
         
-        elif (date_index_check == 1):
-            None
+        else:
+            self.date_col = 'index'
+
+        df = df[df.index.to_series().between(self.start_date, self.end_date)]
+
+        return df
+    
+    def check_transform_dateindex(self, **kwargs):
+
+        date_index_check = self.check_dateindex()
+        df = self.transform_dateindex(date_index_check = date_index_check)
 
         return df
 
@@ -63,13 +82,86 @@ class DataTransform():
         df['Weekend'] = df['Day of Week'].apply(lambda x: 
                                                 1 if x in [5, 6] else 0)
 
-        df = df[df.index.to_series().between(self.start_date, self.end_date)].reset_index()
-
         return df
 
     def derivate_int_float_columns(self, **kwargs):
 
-        df = self.df.copy()
+        date_index_check = self.check_dateindex()
+
+        if (self.date_col == 'nan') & (date_index_check == 0):
+            df = self.df.copy()
+        else:
+            df = self.check_transform_dateindex()
+        
         num_attributes = df.select_dtypes(include=['int64', 'float64'])
 
         return num_attributes
+
+    def rescaling(self, y: str, df: pd.DataFrame, method: str = 'yeo-johnson', **kwargs):
+
+        df = df.copy()
+
+        if method in ['box-cox', 'yeo-johnson']:
+            scaler = pp.PowerTransformer(method=method)
+            scaler = scaler.fit(df[[y]])
+            df[f'{method}_{y}'] = scaler.transform(df[[y]])
+        elif method == 'min-max':
+            scaler = pp.MinMaxScaler()
+            scaler = scaler.fit(df[[y]])
+            df[f'{method}_{y}'] = scaler.transform(df[[y]])
+        elif method == 'robust-scaler':
+            scaler = pp.RobustScaler()
+            scaler = scaler.fit(df[[y]])
+            df[f'{method}_{y}'] = scaler.transform(df[[y]])
+        elif method == 'log1p':
+            scaler = 'log1p'
+            df[f'{method}_{y}'] = np.log1p(df[y])
+        else:
+            self.logger.needed_error(var = "Method", options="['box-cox', 'yeo-johnson', 'min-max', 'robust-scaler', 'log1p']")
+
+        self.test_rescale(y=y, method=method, scaler=scaler, df=df)
+        df = df.drop(y, axis=1)
+
+        return df, scaler
+
+    def inverse_transformation(self, df: pd.DataFrame, col_orig_name: str, y_nt: str, scaler, **kwargs):
+
+        df = df.copy()
+        df[f'{col_orig_name}'] = df[y_nt]
+        df = df.drop(y_nt, axis=1)
+
+        try:
+            if scaler == 'log1p':
+                df[f'{col_orig_name}'] = np.expm1(df[f'{col_orig_name}'])
+            else:
+                df[f'{col_orig_name}'] = scaler.inverse_transform(df[[f'{col_orig_name}']])
+        except:
+            self.logger.full_error("Check scaler passed!")
+
+        return df
+
+    def test_rescale(self, method: str, scaler, df: pd.DataFrame, y: str, **kwargs):
+
+        df = df.copy()
+        df['orig_col'] = df[y]
+        df = self.inverse_transformation(df=df, col_orig_name=y, y_nt=f'{method}_{y}', scaler=scaler) 
+        dif_nt = (df['orig_col'] - df[y]).mean()
+
+        if dif_nt > 0.001:
+            self.logger.generic_error("nature transformation")
+        elif (dif_nt < 0.001) & (dif_nt > 0):
+            self.logger.full_warning(f"The mean difference is below 0.001! (difference = {dif_nt})")
+
+    def prepare_dataframe_timeseries(self, y: str, method: str = 'yeo-johnson', exogenous: list = False, **kwargs):
+        
+        if exogenous:
+            df = self.check_transform_dateindex()
+            df, scaler = self.rescaling(df=df, y=y, method=method)
+            exogenous.append(f'{method}_{y}')
+            df = df[exogenous]            
+        else:
+            df = self.check_transform_dateindex()
+            df, scaler = self.rescaling(df=df, y=y, method=method)
+            df = df[f'{method}_{y}']
+
+        return df, scaler

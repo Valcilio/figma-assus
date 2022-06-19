@@ -1,0 +1,22 @@
+Revised data transformation and created methods to do data preparation for timeseries modeling.
+
+Warning:
+    - No warnings this time!
+
+Additioned:
+
+    - src/resources/datatransform.py: conditions to filter the date in "derivate_int_float_columns" and
+    created two news methods to derivated from the code in "check_transform_dateindex" for do both things
+    separeteds and get these together in this method. Besides that, was created new methods to rescale datasets,
+    to scale back, to test the rescaling method and for prepare a dataset to timeseries modeling.
+
+    - src/resources/logger/logger_msg.py: new method to "needed to be" messages!
+
+    - notebooks/data_eng_ml_model.ipynb: concluded the data preparation step.
+
+Revised:
+    - src/resources/datatransform.py: all this file was revised to having methods more easily to understand.
+
+    - notebooks/date_eng_ml_model.ipynb: excluded some markdowns of steps who isn't divided now.
+
+    - src/resources/logger/logger_msg.py: reduced log's file created time to one in a hour!

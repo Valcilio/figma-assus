@@ -433,3 +433,54 @@
 2022-06-18 14:39:32,304 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
 2022-06-18 14:39:34,518 (INFO)	||| Initing data transform of ETH historical data!
 2022-06-18 14:39:34,535 (INFO)	||| ETL finished!
+2022-06-19 09:13:58,015 (INFO)	||| Initing extract of ETL to obtain ETH historical data in USD value!
+2022-06-19 09:13:59,167 (INFO)	||| Initing data transform of ETH historical data!
+2022-06-19 09:13:59,180 (INFO)	||| ETL finished!
+2022-06-19 09:15:02,424 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 09:15:03,673 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 09:15:03,690 (INFO)	||| ETL finished!
+2022-06-19 09:16:17,855 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 09:16:21,985 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 09:16:22,002 (INFO)	||| ETL finished!
+2022-06-19 09:19:22,133 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 09:19:23,237 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 09:19:23,243 (INFO)	||| ETL finished!
+2022-06-19 09:34:13,206 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 09:34:16,771 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 09:34:16,787 (INFO)	||| ETL finished!
+2022-06-19 09:46:46,833 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 09:46:47,762 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 09:46:47,780 (INFO)	||| ETL finished!
+2022-06-19 09:49:56,199 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 09:49:57,317 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 09:49:57,322 (INFO)	||| ETL finished!
+2022-06-19 09:56:51,062 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 09:56:52,045 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 09:56:52,061 (INFO)	||| ETL finished!
+2022-06-19 10:08:58,998 (INFO)	||| Initing extract of ETL to obtain BTC historical data in BRL value!
+2022-06-19 10:09:00,251 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 10:09:00,269 (INFO)	||| ETL finished!
+2022-06-19 11:08:06,694 (INFO)	||| Method need to be in ['box-cox', 'yeo-johnson', 'log1p']
+2022-06-19 11:15:02,532 (INFO)	||| Check scaler passed!
+2022-06-19 11:17:09,324 (INFO)	||| Check scaler passed!
+2022-06-19 11:17:24,623 (INFO)	||| Check scaler passed!
+2022-06-19 11:37:58,163 (ERROR)	||| Generic error in nature transformation, check the code!
+2022-06-19 11:49:37,229 (WARNING)	||| The mean difference is below 0.001! (difference = 7.185008144006133e-14)
+2022-06-19 11:49:57,889 (WARNING)	||| The mean difference is below 0.001! (difference = 1.9759681890718638e-11)
+2022-06-19 12:04:21,623 (WARNING)	||| The mean difference is below 0.001! (difference = 1.9759681890718638e-11)
+2022-06-19 12:04:30,627 (WARNING)	||| The mean difference is below 0.001! (difference = 7.185008144006133e-14)
+2022-06-19 12:04:46,670 (ERROR)	||| Method need to be in ['box-cox', 'yeo-johnson', 'log1p']
+2022-06-19 12:18:11,094 (WARNING)	||| The mean difference is below 0.001! (difference = 7.185008144006133e-14)
+2022-06-19 12:19:26,994 (WARNING)	||| The mean difference is below 0.001! (difference = 7.185008144006133e-14)
+2022-06-19 12:49:31,331 (WARNING)	||| The mean difference is below 0.001! (difference = 7.522136631204669e-14)
+2022-06-19 13:00:35,602 (WARNING)	||| The mean difference is below 0.001! (difference = 7.522136631204669e-14)
+2022-06-19 13:03:15,216 (WARNING)	||| The mean difference is below 0.001! (difference = 8.889797836878245e-14)
+2022-06-19 13:06:53,177 (WARNING)	||| The mean difference is below 0.001! (difference = 7.522136631204669e-14)
+2022-06-19 13:09:58,044 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-19 13:09:59,270 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 13:09:59,284 (INFO)	||| ETL finished!
+2022-06-19 13:10:04,930 (WARNING)	||| The mean difference is below 0.001! (difference = 2.039988116126194e-14)
+2022-06-19 13:31:42,868 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-19 13:31:44,871 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-19 13:31:44,888 (INFO)	||| ETL finished!
+2022-06-19 13:31:50,958 (WARNING)	||| The mean difference is below 0.001! (difference = 2.039988116126194e-14)
