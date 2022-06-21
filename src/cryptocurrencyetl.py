@@ -46,12 +46,16 @@ class CryptocurrencyEtl():
 
         self.df = df1.copy()
 
+        return df1
+
     def change_to_datetime_index(self, **kwargs):
 
         df = self.df.copy()
         df = df.set_index('timestamp').sort_index()
         df.index = pd.to_datetime(df.index)
         self.df = df.copy()
+
+        return df
 
     def test_market_curr(self, **kwargs):
 

@@ -8,11 +8,9 @@ import pandas as pd
 import seaborn as sns
 import shutil
 from   sklearn.preprocessing import PowerTransformer
-import sys
-sys.path.insert(0, os.environ.get('SRC_FIGMA_PATH'))
 
-from resources.datatransform import DataTransform
-from resources.logger.logger_msg import LoggerMsg
+from .datatransform import DataTransform
+from .logger.logger_msg import LoggerMsg
 
 class  DataAnalysis(DataTransform):
 

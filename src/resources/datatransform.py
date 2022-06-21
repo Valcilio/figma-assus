@@ -4,10 +4,8 @@ import numpy as np
 import os
 import pandas as pd
 from   sklearn import preprocessing as pp
-import sys
-sys.path.insert(0, os.environ.get('SRC_FIGMA_PATH'))
 
-from resources.logger.logger_msg import LoggerMsg
+from .logger.logger_msg import LoggerMsg
 
 class DataTransform():
 

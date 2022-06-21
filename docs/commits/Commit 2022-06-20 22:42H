@@ -1,0 +1,12 @@
+Created unitary tests to "src/cryptocurrencyetl.py".
+
+Warning:
+    - No warnings this time!
+
+Additioned:
+
+    - src/resources/test_cryptocurrencyetl.py: unitary tests to "src/cryptocurrency.py" created and tested to guarantee
+    the code quality.
+
+Revised:
+    - No revisions this time, all the unitary tests was fine!
