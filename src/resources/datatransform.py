@@ -1,7 +1,5 @@
 import datetime as dt
-from statistics import mean
 import numpy as np
-import os
 import pandas as pd
 from   sklearn import preprocessing as pp
 
@@ -152,14 +150,13 @@ class DataTransform():
 
     def prepare_dataframe_timeseries(self, y: str, method: str = 'yeo-johnson', exogenous: list = False, **kwargs):
         
+        df = self.check_transform_dateindex()
+        df, scaler = self.rescaling(df=df, y=y, method=method)
+
         if exogenous:
-            df = self.check_transform_dateindex()
-            df, scaler = self.rescaling(df=df, y=y, method=method)
             exogenous.append(f'{method}_{y}')
             df = df[exogenous]            
         else:
-            df = self.check_transform_dateindex()
-            df, scaler = self.rescaling(df=df, y=y, method=method)
             df = df[f'{method}_{y}']
 
         return df, scaler

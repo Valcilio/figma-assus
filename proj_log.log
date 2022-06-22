@@ -506,3 +506,130 @@
 2022-06-20 21:43:44,951 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
 2022-06-20 21:43:46,180 (INFO)	||| Initing data transform of BTC historical data!
 2022-06-20 21:43:46,198 (INFO)	||| ETL finished!
+2022-06-22 16:10:31,057 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:10:32,562 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:10:32,567 (INFO)	||| ETL finished!
+2022-06-22 16:10:38,526 (WARNING)	||| The mean difference is below 0.001! (difference = 1.893371869861858e-13)
+2022-06-22 16:12:36,828 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:12:39,328 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:12:39,338 (INFO)	||| ETL finished!
+2022-06-22 16:14:21,270 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:14:22,582 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:14:22,599 (INFO)	||| ETL finished!
+2022-06-22 16:15:57,800 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:16:00,479 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:16:00,492 (INFO)	||| ETL finished!
+2022-06-22 16:16:26,816 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:16:28,177 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:16:28,195 (INFO)	||| ETL finished!
+2022-06-22 16:26:50,584 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:26:52,520 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:26:52,537 (INFO)	||| ETL finished!
+2022-06-22 16:27:40,465 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:27:41,612 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:27:41,616 (INFO)	||| ETL finished!
+2022-06-22 16:45:10,134 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:45:12,519 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:45:12,538 (INFO)	||| ETL finished!
+2022-06-22 16:45:39,125 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:45:40,377 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:45:40,396 (INFO)	||| ETL finished!
+2022-06-22 16:46:38,380 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:46:40,638 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:46:40,654 (INFO)	||| ETL finished!
+2022-06-22 16:47:40,097 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:47:41,425 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:47:41,431 (INFO)	||| ETL finished!
+2022-06-22 16:48:17,713 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:48:19,069 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:48:19,073 (INFO)	||| ETL finished!
+2022-06-22 16:50:50,586 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:50:52,463 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:50:52,479 (INFO)	||| ETL finished!
+2022-06-22 16:54:04,165 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:54:05,585 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:54:05,602 (INFO)	||| ETL finished!
+2022-06-22 16:55:32,209 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:55:34,423 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:55:34,440 (INFO)	||| ETL finished!
+2022-06-22 16:57:08,323 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 16:57:10,137 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 16:57:10,154 (INFO)	||| ETL finished!
+2022-06-22 17:03:30,344 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:03:32,216 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:03:32,236 (INFO)	||| ETL finished!
+2022-06-22 17:03:36,751 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:03:38,248 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:03:38,265 (INFO)	||| ETL finished!
+2022-06-22 17:05:19,453 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:05:20,876 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:05:20,893 (INFO)	||| ETL finished!
+2022-06-22 17:05:39,402 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:05:40,336 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:05:40,343 (INFO)	||| ETL finished!
+2022-06-22 17:11:55,580 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:11:57,408 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:11:57,425 (INFO)	||| ETL finished!
+2022-06-22 17:12:09,512 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:12:10,702 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:12:10,709 (INFO)	||| ETL finished!
+2022-06-22 17:19:48,000 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:19:49,044 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:19:49,058 (INFO)	||| ETL finished!
+2022-06-22 17:20:48,227 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:20:49,449 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:20:49,454 (INFO)	||| ETL finished!
+2022-06-22 17:23:43,644 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:23:56,566 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:23:56,585 (INFO)	||| ETL finished!
+2022-06-22 17:37:17,691 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:37:25,002 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:37:25,018 (INFO)	||| ETL finished!
+2022-06-22 17:37:46,640 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:37:48,776 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:37:48,782 (INFO)	||| ETL finished!
+2022-06-22 17:38:05,006 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:38:06,537 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:38:06,554 (INFO)	||| ETL finished!
+2022-06-22 17:47:54,497 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:47:56,183 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:47:56,198 (INFO)	||| ETL finished!
+2022-06-22 17:53:12,105 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:53:14,592 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:53:14,601 (INFO)	||| ETL finished!
+2022-06-22 17:54:08,763 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:54:11,872 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:54:11,876 (INFO)	||| ETL finished!
+2022-06-22 17:56:26,546 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:56:28,423 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:56:28,441 (INFO)	||| ETL finished!
+2022-06-22 17:57:05,359 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 17:57:07,024 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 17:57:07,041 (INFO)	||| ETL finished!
+2022-06-22 18:09:23,651 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:09:25,625 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:09:25,632 (INFO)	||| ETL finished!
+2022-06-22 18:09:50,994 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:09:52,455 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:09:52,473 (INFO)	||| ETL finished!
+2022-06-22 18:10:25,331 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:10:26,786 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:10:26,804 (INFO)	||| ETL finished!
+2022-06-22 18:10:43,606 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:10:44,753 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:10:44,763 (INFO)	||| ETL finished!
+2022-06-22 18:11:14,825 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:11:16,274 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:11:16,293 (INFO)	||| ETL finished!
+2022-06-22 18:11:47,294 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:11:48,473 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:11:48,480 (INFO)	||| ETL finished!
+2022-06-22 18:12:25,635 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:12:27,905 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:12:27,921 (INFO)	||| ETL finished!
+2022-06-22 18:15:26,489 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:15:27,896 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:15:27,914 (INFO)	||| ETL finished!
+2022-06-22 18:17:08,393 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-22 18:17:09,475 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-22 18:17:09,479 (INFO)	||| ETL finished!

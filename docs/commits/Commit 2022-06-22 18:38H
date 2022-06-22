@@ -1,0 +1,16 @@
+Created unitary tests to "src/resources/datatransform.py" and implemented new methods to analysis time series.
+
+Warning:
+    - "src/resources/timeseriesmodeling.py", "src/resources/modelvalidation.py" and
+    "src/resources/tests/test_timeseriesmodeling.py" are three files incompleted, it can't be used right now.
+
+Additioned:
+
+    - src/resources/test_datatransform.py: unitary tests to "src/resources/datatransform.py".
+
+    - src/resources/dataanalysis.py: new methods to save & plot seasonal descomposer and write & print adfuller.
+
+    - notebooks/data_eng_ml_model.ipynb: new analysis based in seasonal decomposer and adfuller. 
+
+Revised:
+    - No revisions this time, all the unitary tests was fine!

@@ -7,7 +7,7 @@ class LoggerMsg():
 
     def __init__(self, file_name: str, **kwargs):
         
-        self.today = dt.datetime.now().strftime('%Y%m%d%H%')
+        self.today = dt.datetime.now().strftime('%Y%m%d%')
 
         logging.basicConfig(
             filename=f'../logs/log_{self.today}.txt',

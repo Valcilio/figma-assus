@@ -1,5 +1,5 @@
-from importlib.resources import path
 import dataframe_image as dfi
+from importlib.resources import path
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,6 +8,8 @@ import pandas as pd
 import seaborn as sns
 import shutil
 from   sklearn.preprocessing import PowerTransformer
+from statsmodels.tsa.seasonal import seasonal_decompose
+from   statsmodels.tsa.stattools import adfuller
 
 from .datatransform import DataTransform
 from .logger.logger_msg import LoggerMsg
@@ -16,7 +18,7 @@ class  DataAnalysis(DataTransform):
 
     def __init__(self, df: pd.DataFrame, date_col = 'nan', 
                 individual_figsize = (18,8),
-                titlesize=20, axes_size = 18, ticks_size = 13,
+                titlesize=20, axes_size = 13, ticks_size = 10,
                 start_date = '2020-01-01', end_date='2022-12-31', **kwargs):
         
         super().__init__(df, date_col, start_date, end_date)
@@ -37,7 +39,7 @@ class  DataAnalysis(DataTransform):
 
     def figure_size_settings(self, **kwargs):
 
-        plt.figure(figsize=self.individual_figsize)
+        plt.rc("figure", figsize=self.individual_figsize)
 
         return None
         
@@ -48,15 +50,46 @@ class  DataAnalysis(DataTransform):
 
         return None
 
-    def save_fig(self, saving_figloc: path, df: pd.DataFrame = False, dataframe: bool = False, **kwargs):
+    def save_fig(self, saving_figloc: path, df: pd.DataFrame = None, **kwargs):
 
-        if dataframe:
+        if df is not None:
             fig_name = os.path.basename(saving_figloc)
             dfi.export(df, fig_name);
             shutil.move(fig_name, saving_figloc);
 
         else:
             plt.savefig(saving_figloc)
+
+    def adfuller_writer(self, y: str, saving_txtloc: str, autolag: str = 'AIC', **kwargs):
+
+        df = self.check_transform_dateindex()
+        df = adfuller(df[y], autolag = autolag, **kwargs)
+
+        with open(saving_txtloc, 'w+') as adf:
+            print(f"1. ADF : {df[0]}", file=adf)
+            print(f"2. P-Value : {df[1]}", file=adf)
+            print(f"3. Num Of Lags : {df[2]}", file=adf)
+            print(f"4. Num Of Observations Used For ADF Regression and Critical Values Calculation: {df[3]}", file=adf)
+            print(f"5. Critical Values :", file=adf)
+            for key, val in df[4].items():
+                print(f"\t{key}: {val}", file=adf)
+            adf.close()
+
+        return None
+
+    def adfuller_reader(self, saving_txtloc: str, **kwargs):
+
+        with open(saving_txtloc) as adfuller:
+            adfuller = print(adfuller.read())
+
+        return adfuller
+
+    def adfuller_description(self, y: str, saving_txtloc: str, **kwargs):
+
+        self.adfuller_writer(y=y, saving_txtloc=saving_txtloc)
+        adfuller = self.adfuller_reader(saving_txtloc=saving_txtloc)
+
+        return adfuller
 
     def statistical_description(self, saving_figloc: str = False, **kwargs):
 
@@ -77,9 +110,24 @@ class  DataAnalysis(DataTransform):
                      'min', 'max', 'range', 'skew', 'kurtosis']
 
         if saving_figloc:
-            self.save_fig(df = m, saving_figloc=saving_figloc, dataframe=True)
+            self.save_fig(df = m, saving_figloc=saving_figloc)
 
         return m
+
+    def plot_seasonal_decomposer(self, y: str, all_inches: tuple = (20, 10), model: str = 'additive', saving_figloc: str = False, **kwargs):
+        
+        df = self.check_transform_dateindex()
+        self.label_size_settings()
+        fig = seasonal_decompose(df[y], model=model)
+
+        fig_plot = fig.plot();
+        fig_plot.set_size_inches(all_inches)
+        fig_plot
+
+        if saving_figloc:
+            fig_plot.savefig(saving_figloc)
+
+        return None
 
     def timely_stability(self, x: str, saving_figloc: path = False, **kwargs):
 

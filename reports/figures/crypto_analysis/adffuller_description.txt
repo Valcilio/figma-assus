@@ -1,0 +1,8 @@
+1. ADF : -1.6407073313064928
+2. P-Value : 0.4618912155288597
+3. Num Of Lags : 0
+4. Num Of Observations Used For ADF Regression and Critical Values Calculation: 537
+5. Critical Values :
+	1%: -3.4425861905056556
+	5%: -2.8669372502674824
+	10%: -2.5696445454608505
