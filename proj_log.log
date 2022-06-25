@@ -633,3 +633,7 @@
 2022-06-22 18:17:08,393 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
 2022-06-22 18:17:09,475 (INFO)	||| Initing data transform of BTC historical data!
 2022-06-22 18:17:09,479 (INFO)	||| ETL finished!
+2022-06-24 22:14:42,417 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
+2022-06-24 22:14:44,488 (INFO)	||| Initing data transform of BTC historical data!
+2022-06-24 22:14:44,511 (INFO)	||| ETL finished!
+2022-06-24 22:14:50,966 (WARNING)	||| The mean difference is below 0.001! (difference = 2.2232092710004912e-13)
