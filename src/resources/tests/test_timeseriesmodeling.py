@@ -6,8 +6,8 @@ import pytest
 import sys
 sys.path.insert(0, os.environ.get('SRC_FIGMA_PATH'))
 
-import resources.context as c
-from resources.datatransform import DataTransform
+#import resources.context as c
+#from resources.datatransform import DataTransform
 #from resources.timeseriesmodeling import TimeSeriesModeling
 
 #df_test = pd.read_csv(c.DATA_INT_FLD / 'test_predict.py')

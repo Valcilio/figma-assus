@@ -1,0 +1,18 @@
+Additioned some .gitkeep and a .gitignore to improve the organization of this project, 
+created documentations in the codes for explain the methods from the classes and
+refactored some codes for better generation and 
+
+Warning:
+    - "src/resources/timeseriesmodeling.py" & "src/resources/modelvalidation.py" & 
+      "src/resources/tests/test_timeseriesmodeling.py": are three files incompleted, they can't be used right now.
+
+Additioned:
+
+    - src: all python files in this directory and directories inside it count with method documentation now.
+
+    - notebooks/data_eng_ml_model.ipynb: Updated with new methods from src/resources/datanaanalysis.py. 
+
+Revised:
+    - src/resources/dataanalysis.py: method to plot some distributions from nature transformation was remade and
+                                     divided in three methods for better code understanding and to be most close 
+                                     of a clean code.

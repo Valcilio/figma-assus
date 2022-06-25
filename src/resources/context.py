@@ -7,7 +7,6 @@ from datetime import datetime
 import os
 from pathlib import Path
 import re
-import sys
 
 # Look for file **.proj_root**
 found_root = False
@@ -54,12 +53,8 @@ if 'USERPROFILE' in os.environ:
     HOME_FLD = Path(os.environ['USERPROFILE'])
 elif 'HOME' in os.environ:
     HOME_FLD = Path(os.environ['HOME'])
-else:
-    logging.warning("Cannot find the HOME / USERPROFILE folder.")
-
-# Adding source folder to Python Path
-sys.path.insert(0, str(SRC_FLD))
-
+#else:
+    #logging.warning("Cannot find the HOME / USERPROFILE folder.")
 
 def get_last_file(folder: str or Path, regexp: str):
     """ get_last_file(folder: str or Path, regexp: str)

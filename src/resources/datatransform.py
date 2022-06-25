@@ -15,9 +15,10 @@ class DataTransform():
         self.end_date = end_date
         self.df = df.copy()
         self.date_col = date_col
-        self.logger = LoggerMsg(file_name='Data Transform')
+        self.logger = LoggerMsg(file_name='DataTrans')
 
     def check_dateindex(self, **kwargs):
+        '''Check if the index is datetimeindex'''
 
         df = self.df.copy()
 
@@ -28,6 +29,8 @@ class DataTransform():
         return date_index_check
 
     def transform_dateindex(self, date_index_check: int, **kwargs):
+        '''Transform index to datetimeindex if it's not a datetimeindex yet using
+        the column passed how date_col at the start of this class'''
 
         df = self.df.copy()
 
@@ -47,6 +50,8 @@ class DataTransform():
         return df
     
     def check_transform_dateindex(self, **kwargs):
+        '''Run check and transform datetimeindex methods to check if exist some datetime index
+        and if not transform the date_col to a datetimeindex format'''
 
         date_index_check = self.check_dateindex()
         df = self.transform_dateindex(date_index_check = date_index_check)
@@ -54,6 +59,7 @@ class DataTransform():
         return df
 
     def derivate_time_info(self, **kwargs):
+        '''Derivate time information from the datetimeindex'''
         
         df = self.check_transform_dateindex()
 
@@ -81,6 +87,7 @@ class DataTransform():
         return df
 
     def derivate_int_float_columns(self, **kwargs):
+        '''Filter dataset to just contain int64 and float64 columns'''
 
         date_index_check = self.check_dateindex()
 
@@ -94,6 +101,8 @@ class DataTransform():
         return num_attributes
 
     def rescaling(self, y: str, df: pd.DataFrame, method: str = 'yeo-johnson', **kwargs):
+        '''Rescale the column passed as "y" to a scale who was passed in "method" attribute
+        and check if this transformation is correct with the method "test_rescale"'''
 
         df = df.copy()
 
@@ -121,6 +130,7 @@ class DataTransform():
         return df, scaler
 
     def inverse_transformation(self, df: pd.DataFrame, col_orig_name: str, y_nt: str, scaler, **kwargs):
+        '''Undo the rescaling based in the scaler passed'''
 
         df = df.copy()
         df[f'{col_orig_name}'] = df[y_nt]
@@ -137,18 +147,22 @@ class DataTransform():
         return df
 
     def test_rescale(self, method: str, scaler, df: pd.DataFrame, y: str, **kwargs):
+        '''Run test inverse transformation with the scale passed to guarantee that is
+        possible to undo the transformation with no big differences'''
 
         df = df.copy()
         df['orig_col'] = df[y]
         df = self.inverse_transformation(df=df, col_orig_name=y, y_nt=f'{method}_{y}', scaler=scaler) 
         dif_nt = (df['orig_col'] - df[y]).mean()
 
-        if dif_nt > 0.001:
-            self.logger.generic_error("nature transformation")
-        elif (dif_nt < 0.001) & (dif_nt > 0):
-            self.logger.full_warning(f"The mean difference is below 0.001! (difference = {dif_nt})")
+        if dif_nt > 0.01:
+            self.logger.generic_error(f"Nature Transformation ({method})")
+        elif (dif_nt < 0.01) & (dif_nt > 0):
+            self.logger.full_warning(f'''The mean difference in {method} transformation 
+                                         is below 0.01! (difference = {dif_nt})''')
 
     def prepare_dataframe_timeseries(self, y: str, method: str = 'yeo-johnson', exogenous: list = False, **kwargs):
+        '''Prepare the timeserie to the modeling process'''
         
         df = self.check_transform_dateindex()
         df, scaler = self.rescaling(df=df, y=y, method=method)
