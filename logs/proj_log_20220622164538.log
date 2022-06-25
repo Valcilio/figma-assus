@@ -1,3 +1,0 @@
-2022-06-22 16:45:39,125 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
-2022-06-22 16:45:40,377 (INFO)	||| Initing data transform of BTC historical data!
-2022-06-22 16:45:40,396 (INFO)	||| ETL finished!

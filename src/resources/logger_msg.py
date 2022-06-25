@@ -3,14 +3,16 @@ import logging
 from multiprocessing.sharedctypes import Value
 from pandas.core.frame import DataFrame
 
+import resources.context as c
+
 class LoggerMsg():
 
     def __init__(self, file_name: str, **kwargs):
         
-        self.today = dt.datetime.now().strftime('%Y%m%d%')
+        self.today = dt.datetime.now().strftime('%Y%m%d')
 
         logging.basicConfig(
-            filename=f'../logs/log_{self.today}.txt',
+            filename= c.LOG_FLD / f'log_{self.today}.txt',
             format='%(asctime)s - %(levelname)s - %(name)s - %(message)s',
             datefmt='%Y-%m-%d %H:%M:%S',
             level=logging.DEBUG

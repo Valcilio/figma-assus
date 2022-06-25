@@ -5,7 +5,6 @@
 
 from datetime import datetime
 import os
-import logging
 from pathlib import Path
 import re
 import sys
@@ -34,23 +33,6 @@ if not found_root:
                        "the file ** .proj_root ** exists."
     )
 
-# Initiate Logging Feature
-handlers=[
-    logging.FileHandler(PROJ_DIR / 'proj_log.log'),
-    logging.FileHandler(PROJ_DIR /
-                        'logs' /
-                        'proj_log_{}.log'.format(
-                            datetime.now().strftime("%Y%m%d%H%M%S")
-                        )
-                       ),
-    logging.StreamHandler()
-]
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s (%(levelname)s)	||| %(message)s',
-    handlers=handlers
-)
 
 # Add references to Project Folders
 DATA_FLD = PROJ_DIR / 'data'
@@ -58,6 +40,7 @@ DATA_EXT_FLD = DATA_FLD / 'external'
 DATA_INT_FLD = DATA_FLD / 'interim'
 DATA_PROC_FLD = DATA_FLD / 'processed'
 DATA_RAW_FLD = DATA_FLD / 'raw'
+LOG_FLD = PROJ_DIR / 'logs'
 
 NB_FLD = PROJ_DIR / 'notebooks'
 REPORT_FLD = PROJ_DIR / 'reports'

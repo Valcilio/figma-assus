@@ -12,7 +12,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from   statsmodels.tsa.stattools import adfuller
 
 from .datatransform import DataTransform
-from .logger.logger_msg import LoggerMsg
+from .logger_msg import LoggerMsg
 
 class  DataAnalysis(DataTransform):
 

@@ -1,5 +1,0 @@
-2022-06-13 20:41:52,521 (INFO)	||| Initing extract of ETL to obtain BTC historical data in USD value!
-2022-06-13 20:41:54,069 (INFO)	||| Initing data transform of BTC historical data!
-2022-06-13 20:41:54,085 (INFO)	||| ETL finished!
-2022-06-13 20:41:58,444 (INFO)	||| Is necessary one date info in index or 
-                                         column to plot stability!
