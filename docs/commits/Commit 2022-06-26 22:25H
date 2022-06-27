@@ -1,0 +1,16 @@
+Developed model class and unitary tests for this method.
+
+Warning:
+    - src/resources/modelvalidation.py: empty for now, is the last step to end this first part of this project.
+
+Additioned:
+
+    - src/resources/tests/test_timeseriesmodeling.py: developed and used to test "src/resouces/timeseriesmodeling.py".
+
+    - src/resources/timeseriesmodeling.py: new methods to fit a SARIMAX model and forecast with any AR family model.
+
+    - notebooks/data_eng_ml_model.ipynb: updated with new methods from src/resources/datanaanalysis.py. 
+
+Revised:
+    - src/resources/datatransform.py: additioned new code lines to the method "prepare_dataframe_timeseries" for
+    do all preparations needed for a timeseries model.
