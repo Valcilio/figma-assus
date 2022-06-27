@@ -166,6 +166,7 @@ class DataTransform():
         
         df = self.check_transform_dateindex()
         df, scaler = self.rescaling(df=df, y=y, method=method)
+        df.index = pd.DatetimeIndex(df.index.values, freq=df.index.inferred_freq)
 
         if exogenous:
             exogenous.append(f'{method}_{y}')
