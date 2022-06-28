@@ -5,7 +5,7 @@ from pandas.testing import assert_frame_equal
 import sys
 sys.path.insert(0, os.environ.get('SRC_FIGMA_PATH'))
 
-from resources.datatransform import DataTransform
+from datatransform import DataTransform
 from resources import context as c
 
 df_test = pd.read_csv(c.DATA_INT_FLD / 'test_df.csv')

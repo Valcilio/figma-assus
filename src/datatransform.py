@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from   sklearn import preprocessing as pp
 
-from .logger_msg import LoggerMsg
+from resources.logger_msg import LoggerMsg
 
 class DataTransform():
 
@@ -138,13 +138,13 @@ class DataTransform():
 
         try:
             if scaler == 'log1p':
-                df[f'{col_orig_name}'] = np.expm1(df[f'{col_orig_name}'])
+                df[f'{y_nt}_reversed'] = np.expm1(df[f'{col_orig_name}'])
             else:
-                df[f'{col_orig_name}'] = scaler.inverse_transform(df[[f'{col_orig_name}']])
+                df[f'{y_nt}_reversed'] = scaler.inverse_transform(df[[f'{col_orig_name}']])
         except:
             self.logger.full_error("Check scaler passed!")
 
-        return df
+        return df.drop(col_orig_name, axis=1)
 
     def test_rescale(self, method: str, scaler, df: pd.DataFrame, y: str, **kwargs):
         '''Run test inverse transformation with the scale passed to guarantee that is
@@ -153,7 +153,7 @@ class DataTransform():
         df = df.copy()
         df['orig_col'] = df[y]
         df = self.inverse_transformation(df=df, col_orig_name=y, y_nt=f'{method}_{y}', scaler=scaler) 
-        dif_nt = (df['orig_col'] - df[y]).mean()
+        dif_nt = (df['orig_col'] - df[f'{method}_{y}_reversed']).mean()
 
         if dif_nt > 0.01:
             self.logger.generic_error(f"Nature Transformation ({method})")

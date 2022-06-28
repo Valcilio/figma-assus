@@ -1,0 +1,14 @@
+Finished time series model to predict cryptocurrencies' value and the validation.
+
+Warning:
+    - src/ts_modelvalidation.py: excluded because it's not necessary.
+
+Additioned:
+    - src/resources/tests/test_timeseriesmodeling.py: developed a new method to test the rolling_cross_validation.
+
+    - src/timeseriesmodeling.py: methods to validate the model. 
+
+    - notebooks/data_eng_ml_model.ipynb: model validation.
+
+Revised:
+    - src/datatransform.py: revised method to inverse_transform the variables with better names.
