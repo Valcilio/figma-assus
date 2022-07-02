@@ -7,14 +7,13 @@ import warnings
 from datatransform import DataTransform
 from resources.logger_msg import LoggerMsg
 
-class TimeSeriesModeling(DataTransform):
+class TimeSeriesModeling():
 
     def __init__(self, df: pd.DataFrame, **kwargs):
 
-        super().__init__(df=df)
-
         self.df = df.copy()
         self.logger = LoggerMsg('TSModel')
+        self.trans_data = DataTransform(df=df)
 
     def internal_reverse_scale(self, df: pd.DataFrame, orig_name:str, scaler=False, **kwargs):
         '''Reverse scale for results from forecating'''
@@ -23,7 +22,7 @@ class TimeSeriesModeling(DataTransform):
         cols = list(df.columns)
         if scaler:
             for c in cols:
-                df.loc[:, c] = self.inverse_transformation(df=df, y_nt=c, col_orig_name=orig_name, scaler=scaler).loc[: ,c + '_reversed'].copy()
+                df.loc[:, c] = self.trans_data.inverse_transformation(df=df, y_nt=c, col_orig_name=orig_name, scaler=scaler).loc[: ,c + '_reversed'].copy()
 
     def fit_sarimax(self, passed_order: tuple = (2, 1, 5), seas_order: tuple = (1, 1, 1, 24), **kwargs):
         '''Fit sarimax model'''
